@@ -4,5 +4,7 @@ const homeController = require('../controllers/home_controller');
 console.log("rounter loaded");
 
 router.get('/',homeController.home);
+router.use('/users',require('./users'));
+router.use('/post',require('./post'));
 
 module.exports = router;
