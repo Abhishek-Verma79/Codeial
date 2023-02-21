@@ -1,0 +1,17 @@
+footer {
+  display: flex;
+  height: 4rem;
+  background-color: #504d4d;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 2rem;
+  color: white; }
+  footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 2.7rem;
+    font-family: sans-serif; }
+    footer ul a {
+      color: white; }
