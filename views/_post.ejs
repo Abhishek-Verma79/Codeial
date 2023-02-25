@@ -1,4 +1,6 @@
-<li>
+<ul>
+    <% for(let post of posts) { %>
+  <li>
     <p>
         <% if(locals.user && (locals.user.id == post.user.id)){ %>
         <small>
@@ -21,8 +23,8 @@
         <% } %>
         <div class="post-comments-list">
             <ul id="post-comments-<%= post._id %>">
-                <li>
                 <% for(comment of post.comments) { %>
+                    <li>
                     <p>
                         <% if(locals.user && (locals.user.id == comment.user.id)){ %>
                             <small>
@@ -35,10 +37,12 @@
                             <%= comment.user.name %>
                         </small>
                     </p>
-                <% } %>
                 </li>
+                <% } %>
             </ul>
 
         </div>
     </div>
 </li>
+<% } %>
+</ul>

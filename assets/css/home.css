@@ -1,0 +1,9 @@
+#home-container {
+  display: flex; }
+  #home-container #feed-posts {
+    width: 70%;
+    padding: 2rem; }
+  #home-container #user-friends {
+    width: 30%;
+    padding: 2rem;
+    height: 100vh; }

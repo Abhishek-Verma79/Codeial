@@ -11,6 +11,16 @@ module.exports.profile = function(req,res){
    });
 }
 
+module.exports.update = function(req,res){
+   if(req.user.id == req.params.id){
+      User.findByIdAndUpdate(req.params.id, req.body , function(err,user){
+         return res.redirect('back');
+      });
+   }else{
+      return res.status(401).send("Unautharized!");
+   }
+}
+
 //render the sign up page
 module.exports.signUp = function(req,res){
 
@@ -66,6 +76,7 @@ module.exports.create = function(req,res){
 
 // sign in and create the session for user
 module.exports.createSession = function(req,res){
+   req.flash('success','Logged in Successfully');
    return res.redirect('/');
 }
 
@@ -75,6 +86,7 @@ module.exports.destroySession = function(req,res){
          console.log("Error in logging out the session");
          return;
       }
+      req.flash('success','You have logged out!');
+      return res.redirect('/');
    });
-   return res.redirect('/');
 }
